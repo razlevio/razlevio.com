@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { sans, mono, serif } from "@/lib/fonts/fonts";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Raz Levi",
@@ -87,6 +88,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
