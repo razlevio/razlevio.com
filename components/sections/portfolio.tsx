@@ -1,5 +1,4 @@
-import React from "react";
-import { ProjectCard } from "@/components/project-card";
+import { ProjectCard } from "@/components/cards/project-card";
 import { FadeIn } from "@/components/animations/fade-in";
 import { StaggerContainer } from "@/components/animations/stagger-container";
 import { StaggerItem } from "@/components/animations/stagger-item";

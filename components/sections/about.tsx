@@ -1,4 +1,3 @@
-import React from "react";
 import { FadeIn } from "@/components/animations/fade-in";
 import { about } from "@/data/about";
 

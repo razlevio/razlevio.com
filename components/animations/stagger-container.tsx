@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion';
+"use client";
 
-export function StaggerContainer({ 
+import { motion } from "framer-motion";
+
+export function StaggerContainer({
   children,
   delay = 0,
-  className = "",
-}: { 
+}: {
   children: React.ReactNode;
   delay?: number;
-  className?: string;
 }) {
   return (
     <motion.div
@@ -19,11 +19,10 @@ export function StaggerContainer({
           opacity: 1,
           transition: {
             staggerChildren: 0.1,
-            delayChildren: delay
-          }
-        }
+            delayChildren: delay,
+          },
+        },
       }}
-      className={className}
     >
       {children}
     </motion.div>

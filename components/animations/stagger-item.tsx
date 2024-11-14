@@ -1,12 +1,8 @@
-import { motion } from 'framer-motion';
+"use client";
 
-export function StaggerItem({ 
-  children,
-  className = "",
-}: { 
-  children: React.ReactNode;
-  className?: string;
-}) {
+import { motion } from "framer-motion";
+
+export function StaggerItem({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
       variants={{
@@ -16,11 +12,10 @@ export function StaggerItem({
           y: 0,
           transition: {
             duration: 0.5,
-            ease: [0.21, 0.47, 0.32, 0.98]
-          }
-        }
+            ease: [0.21, 0.47, 0.32, 0.98],
+          },
+        },
       }}
-      className={className}
     >
       {children}
     </motion.div>

@@ -2,7 +2,7 @@ import { StaggerContainer } from "@/components/animations/stagger-container";
 import { StaggerItem } from "@/components/animations/stagger-item";
 import { FadeIn } from "@/components/animations/fade-in";
 import { services } from "@/data/services";
-import { ServiceCard } from "@/components/service-card";
+import { ServiceCard } from "@/components/cards/service-card";
 
 export function Services() {
   return (
