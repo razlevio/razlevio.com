@@ -40,7 +40,7 @@ export function Header() {
           </div>
           <div className="flex gap-2">
             {about.socials.map((social) => (
-              <Link key={social.url} href={social.url}>
+              <Link key={social.url} href={social.url} target="_blank">
                 <Button variant="outline" size="iconSm">
                   <social.icon className="h-5 w-5" />
                 </Button>
