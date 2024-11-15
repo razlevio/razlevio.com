@@ -21,21 +21,21 @@ export const projects = [
     title: "Munigrant",
     description:
       "Web-based CRM tool for efficient management and oversight of government support funds, featuring dashboards, data visualizations, and robust funding controls.",
-    icon: "/projects/munigrant.jpg",
+    icon: "/projects/munigrant-blackbg.png",
     url: "private-client",
   },
   {
     title: "Thinkmate",
     description:
       "AI-powered platform that effortlessly generates creative ideas on every topic, providing step-by-step further context guidance to bring those ideas to life.",
-    icon: "/projects/thinkmate.jpg",
+    icon: "/projects/thinkmate-blackbg.png",
     url: "https://thinkmate.vercel.app",
   },
   {
     title: "Nexus",
     description:
       "A collaborative, real-time document editor that empowers seamless organization, flexible workspaces, and secure file management, streamlining productivity.",
-    icon: "/projects/nexus.jpg",
+    icon: "/projects/nexus-blackbg.png",
     url: "https://nexus.vercel.app",
   },
 ];
