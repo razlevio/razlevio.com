@@ -17,7 +17,7 @@ export function Header() {
             </h1>
             <div className="sm:hidden">
               <Image
-                src="/avatar-120x120.png"
+                src="/avatar.jpeg"
                 alt="Profile"
                 width={48}
                 height={48}
@@ -51,7 +51,7 @@ export function Header() {
         </div>
         <div className="hidden sm:block">
           <Image
-            src="/avatar-120x120.png"
+            src="/avatar.jpeg"
             alt="Profile"
             width={120}
             height={120}

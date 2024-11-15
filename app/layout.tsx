@@ -6,8 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Raz Levi",
-  description:
-    "Portfolio showcasing my software engineering journey and favorite tools",
+  description: "Building software products that fit seamlessly into life 🚀",
   keywords: [
     "portfolio",
     "software engineer",
@@ -21,9 +20,9 @@ export const metadata: Metadata = {
   creator: "razlevio",
   authors: [{ name: "Raz Levi", url: "https://razlevio.com" }],
   icons: {
-    icon: [{ url: "/avatar-120x120.png" }],
-    shortcut: "/avatar-120x120.png",
-    apple: "/avatar-120x120.png",
+    icon: [{ url: "/avatar.jpeg" }],
+    shortcut: "/avatar.jpeg",
+    apple: "/avatar.jpeg",
   },
   openGraph: {
     title: "Raz Levi | Portfolio",
@@ -35,18 +34,17 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/avatar-120x120.png",
+        url: "/avatar.jpeg",
         width: 1200,
         height: 630,
-        alt: "Raz Levi | Portfolio",
+        alt: "Raz Levi",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Raz Levi | Portfolio",
-    description:
-      "Portfolio showcasing my software engineering journey and favorite tools",
+    title: "Raz Levi",
+    description: "Building software products that fit seamlessly into life 🚀",
     site: "@razlevio",
     creator: "@razlevio",
   },

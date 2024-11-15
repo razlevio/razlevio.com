@@ -1,17 +1,17 @@
 {
-  "name": "Portfolio",
-  "short_name": "Portfolio",
+  "name": "Raz Levi",
+  "short_name": "Raz Levi",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/avatar.jpeg",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/avatar.jpeg",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "maskable"
     }
   ],
