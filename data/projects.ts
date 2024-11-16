@@ -36,6 +36,6 @@ export const projects = [
     description:
       "A collaborative, real-time document editor that empowers seamless organization, flexible workspaces, and secure file management, streamlining productivity.",
     icon: "/projects/nexus-blackbg.png",
-    url: "https://nexus.vercel.app",
+    url: "https://neexus.vercel.app",
   },
 ];
