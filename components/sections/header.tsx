@@ -6,6 +6,7 @@ import { about } from "@/data/about";
 import Link from "next/link";
 import { ThemeSwitcher } from "@/components/switchers/theme-switcher";
 import { ViewCounter } from "@/components/view-counter";
+
 export function Header() {
   return (
     <FadeIn>
