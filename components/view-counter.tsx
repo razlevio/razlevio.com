@@ -6,7 +6,6 @@ export const dynamic = "force-dynamic";
 
 export async function ViewCounter() {
   try {
-    const { views: currentViews } = await getPageViews();
     const { views } = await incrementPageViews();
 
     return (

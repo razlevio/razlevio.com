@@ -8,7 +8,7 @@ export function Services() {
   return (
     <section id="services">
       <FadeIn delay={0.4}>
-        <h2 className="text-xl mb-4 font-sans font-bold tracking-tight">
+        <h2 className="text-lg sm:text-xl mb-4 font-sans font-bold tracking-tight">
           Products & Services I use
         </h2>
       </FadeIn>

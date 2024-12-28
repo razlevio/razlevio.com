@@ -8,7 +8,7 @@ export function Portfolio() {
   return (
     <section id="portfolio">
       <FadeIn delay={0.3}>
-        <h2 className="text-xl mb-4 font-sans font-bold tracking-tight">
+        <h2 className="text-lg sm:text-xl mb-4 font-sans font-bold tracking-tight">
           Portfolio
         </h2>
       </FadeIn>

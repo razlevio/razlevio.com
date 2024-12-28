@@ -26,7 +26,7 @@ export function Header() {
               />
             </div>
           </div>
-          <p className="leading-relaxed tracking-tight text-muted-foreground">
+          <p className="text-sm sm:text-base leading-relaxed tracking-tight text-muted-foreground">
             {about.headline}
           </p>
           <div className="flex flex-col items-start sm:flex-row sm:items-center justify-between gap-2">
