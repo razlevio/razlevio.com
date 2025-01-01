@@ -5,3 +5,4 @@
 - Next.js
 - Tailwind CSS
 - Framer Motion
+Last updated: 2025-01-01
