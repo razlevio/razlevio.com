@@ -1,6 +1,7 @@
 {
   "name": "Raz Levi",
   "short_name": "Raz Levi",
+  "start_url": "/",
   "icons": [
     {
       "src": "/avatar.jpeg",
