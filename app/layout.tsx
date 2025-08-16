@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: appConfig.name,
     template: `${appConfig.name} | %s`,
   },
-	metadataBase: new URL(appConfig.url),
+  metadataBase: new URL(appConfig.url),
   description: appConfig.description,
   keywords: [
     "portfolio",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   creator: "razlevio",
   authors: [{ name: "Raz Levi", url: "https://razlevio.com" }],
   icons: {
-    icon: [{ url: "/avatar.jpeg" }],
-    shortcut: "/avatar.jpeg",
-    apple: "/avatar.jpeg",
+    icon: [{ url: "/avatar0.jpeg" }],
+    shortcut: "/avatar0.jpeg",
+    apple: "/avatar0.jpeg",
   },
   openGraph: {
     type: "website",

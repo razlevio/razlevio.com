@@ -10,15 +10,15 @@ import { ViewCounter } from "@/components/view-counter";
 export function Header() {
   return (
     <FadeIn>
-      <section id="header" className="flex justify-between items-start">
-        <div className="flex flex-col gap-2">
+      <section id="header" className="grid grid-cols-4 gap-8">
+        <div className="flex flex-col gap-2 col-span-3">
           <div className="flex items-center gap-4">
             <h1 className="text-4xl font-serif font-extrabold tracking-normal">
               {about.name}
             </h1>
             <div className="sm:hidden">
               <Image
-                src="/avatar.jpeg"
+                src="/avatar0.jpeg"
                 alt="Profile"
                 width={48}
                 height={48}
@@ -52,11 +52,11 @@ export function Header() {
         </div>
         <div className="hidden sm:block">
           <Image
-            src="/avatar.jpeg"
+            src="/avatar0.jpeg"
             alt="Profile"
             width={120}
             height={120}
-            className="rounded-lg object-cover ring-2 ring-transparent hover:ring-primary transition-all duration-300"
+            className="rounded-lg object-cover ring-2 ring-transparent hover:ring-primary transition-all duration-300 h-full w-full"
           />
         </div>
       </section>
