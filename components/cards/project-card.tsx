@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 
 export function ProjectCard({
   title,
@@ -19,12 +21,31 @@ export function ProjectCard({
   url: string;
   status?: string;
 }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClamped, setIsClamped] = useState(false);
+  const textRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    if (textRef.current) {
+      const element = textRef.current;
+      const lineHeight = parseInt(getComputedStyle(element).lineHeight);
+      const maxHeight = lineHeight * 4; // 4 lines
+      const actualHeight = element.scrollHeight;
+
+      setIsClamped(actualHeight > maxHeight);
+    }
+  }, [description]);
+
   return (
-    <Card className="h-full p-4 transition-all duration-300 hover:shadow-[0_0_0_1px_hsl(var(--primary))] overflow-hidden">
+    <Card
+      className="h-full p-4 transition-all duration-300 hover:shadow-[0_0_0_1px_hsl(var(--primary))] overflow-hidden group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="flex flex-col h-full">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-3">
-            <Avatar className="h-6 w-6 shrink-0">
+            <Avatar className="h-8 w-8 shrink-0 p-1 border">
               <AvatarImage src={icon} alt={title} />
             </Avatar>
             <Link
@@ -58,7 +79,29 @@ export function ProjectCard({
           </Link>
         </div>
 
-        <p className="text-xs text-muted-foreground">{description}</p>
+        <div className="overflow-hidden">
+          <motion.div
+            animate={{
+              height: isHovered && isClamped ? "auto" : "4.5rem",
+            }}
+            transition={{
+              duration: 0.4,
+              ease: [0.4, 0, 0.2, 1],
+            }}
+          >
+            <p
+              ref={textRef}
+              className="text-xs text-muted-foreground"
+              style={{
+                display: "-webkit-box",
+                WebkitLineClamp: isHovered && isClamped ? "unset" : "4",
+                WebkitBoxOrient: "vertical" as const,
+              }}
+            >
+              {description}
+            </p>
+          </motion.div>
+        </div>
       </div>
     </Card>
   );

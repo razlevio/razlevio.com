@@ -9,7 +9,7 @@ export function Portfolio() {
     <section id="portfolio">
       <FadeIn delay={0.3}>
         <h2 className="text-lg sm:text-xl mb-4 font-sans font-bold tracking-tight">
-          Portfolio
+          Projects
         </h2>
       </FadeIn>
       <StaggerContainer>
