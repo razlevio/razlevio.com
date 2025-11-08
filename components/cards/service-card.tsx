@@ -1,7 +1,7 @@
-import { Card } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Card } from "@/components/ui/card";
 
 export function ServiceCard({
   title,
@@ -20,27 +20,29 @@ export function ServiceCard({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Avatar className="h-6 w-6 shrink-0">
-              <AvatarImage src={icon} alt={title} />
+              <AvatarImage alt={title} src={icon} />
             </Avatar>
             <Link
+              className="font-sans font-semibold tracking-tight transition-colors hover:text-primary hover:underline"
               href={url}
-              target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold font-sans tracking-tight hover:text-primary hover:underline transition-colors"
+              target="_blank"
             >
               {title}
             </Link>
           </div>
           <Link
+            className="text-muted-foreground transition-colors hover:text-primary"
             href={url}
-            target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
+            target="_blank"
           >
             <ExternalLink size={16} />
           </Link>
         </div>
-        <p className="text-xs text-muted-foreground pl-9 line-clamp-1">{description}</p>
+        <p className="line-clamp-1 pl-9 text-muted-foreground text-xs">
+          {description}
+        </p>
       </div>
     </Card>
   );

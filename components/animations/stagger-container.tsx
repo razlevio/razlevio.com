@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export function StaggerContainer({
   children,
@@ -11,8 +11,8 @@ export function StaggerContainer({
 }) {
   return (
     <motion.div
-      initial="hidden"
       animate="visible"
+      initial="hidden"
       variants={{
         hidden: { opacity: 0 },
         visible: {

@@ -1,0 +1,86 @@
+"use client";
+
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
+// import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
+import { useEffect, useRef, useState } from "react";
+// import { RazLeviMark } from "./razlevi-mark";
+
+export function SiteHeaderMark() {
+  // const pathname = usePathname();
+  // const { resolvedTheme } = useTheme();
+  // const fill = resolvedTheme === "dark" ? "white" : "black";
+  // return pathname === "/" ? <RazLeviMarkMotion /> : <RazLeviMark />;
+  return <RazLeviMarkMotion />;
+}
+
+function RazLeviMarkMotion() {
+  const { scrollY } = useScroll();
+  const [visible, setVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const distanceRef = useRef(160);
+  const { resolvedTheme } = useTheme();
+
+  useMotionValueEvent(scrollY, "change", (latestValue) => {
+    setVisible(latestValue >= distanceRef.current);
+  });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const coverMark = document.getElementById("js-cover-mark");
+    if (!coverMark) {
+      return;
+    }
+
+    distanceRef.current = calcDistance(coverMark);
+
+    const resizeObserver = new ResizeObserver(() => {
+      distanceRef.current = calcDistance(coverMark);
+    });
+    resizeObserver.observe(coverMark);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
+  return (
+    <motion.svg
+      animate={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0px)" : "translateY(8px)",
+      }}
+      aria-label="RazLevi Logo"
+      fill="none"
+      initial={{
+        opacity: 0,
+        transform: "translateY(8px)",
+      }}
+      transition={{ duration: 0.3 }}
+      viewBox="0 0 142 89"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Provide accessible title for SVG; previous lint error fixed */}
+      <title>RazLevi Logo</title>
+      <path
+        d="M3.68 85.536V38.048H15.328V26.4H51.424V38.048H63.2V50.72H50.144V39.2H16.608V85.536H3.68ZM90.328 85.536V74.016H78.68V3.23199H91.608V72.736H125.144V61.088H138.2V74.016H126.424V85.536H90.328Z"
+        fill={mounted && resolvedTheme === "dark" ? "white" : "black"}
+      />
+      <path
+        d="M3.68 85.536H0.68V88.536H3.68V85.536ZM3.68 38.048V35.048H0.68V38.048H3.68ZM15.328 38.048V41.048H18.328V38.048H15.328ZM15.328 26.4V23.4H12.328V26.4H15.328ZM51.424 26.4H54.424V23.4H51.424V26.4ZM51.424 38.048H48.424V41.048H51.424V38.048ZM63.2 38.048H66.2V35.048H63.2V38.048ZM63.2 50.72V53.72H66.2V50.72H63.2ZM50.144 50.72H47.144V53.72H50.144V50.72ZM50.144 39.2H53.144V36.2H50.144V39.2ZM16.608 39.2V36.2H13.608V39.2H16.608ZM16.608 85.536V88.536H19.608V85.536H16.608ZM3.68 85.536H6.68V38.048H3.68H0.68V85.536H3.68ZM3.68 38.048V41.048H15.328V38.048V35.048H3.68V38.048ZM15.328 38.048H18.328V26.4H15.328H12.328V38.048H15.328ZM15.328 26.4V29.4H51.424V26.4V23.4H15.328V26.4ZM51.424 26.4H48.424V38.048H51.424H54.424V26.4H51.424ZM51.424 38.048V41.048H63.2V38.048V35.048H51.424V38.048ZM63.2 38.048H60.2V50.72H63.2H66.2V38.048H63.2ZM63.2 50.72V47.72H50.144V50.72V53.72H63.2V50.72ZM50.144 50.72H53.144V39.2H50.144H47.144V50.72H50.144ZM50.144 39.2V36.2H16.608V39.2V42.2H50.144V39.2ZM16.608 39.2H13.608V85.536H16.608H19.608V39.2H16.608ZM16.608 85.536V82.536H3.68V85.536V88.536H16.608V85.536ZM90.328 85.536H87.328V88.536H90.328V85.536ZM90.328 74.016H93.328V71.016H90.328V74.016ZM78.68 74.016H75.68V77.016H78.68V74.016ZM78.68 3.23199V0.231995H75.68V3.23199H78.68ZM91.608 3.23199H94.608V0.231995H91.608V3.23199ZM91.608 72.736H88.608V75.736H91.608V72.736ZM125.144 72.736V75.736H128.144V72.736H125.144ZM125.144 61.088V58.088H122.144V61.088H125.144ZM138.2 61.088H141.2V58.088H138.2V61.088ZM138.2 74.016V77.016H141.2V74.016H138.2ZM126.424 74.016V71.016H123.424V74.016H126.424ZM126.424 85.536V88.536H129.424V85.536H126.424ZM90.328 85.536H93.328V74.016H90.328H87.328V85.536H90.328ZM90.328 74.016V71.016H78.68V74.016V77.016H90.328V74.016ZM78.68 74.016H81.68V3.23199H78.68H75.68V74.016H78.68ZM78.68 3.23199V6.23199H91.608V3.23199V0.231995H78.68V3.23199ZM91.608 3.23199H88.608V72.736H91.608H94.608V3.23199H91.608ZM91.608 72.736V75.736H125.144V72.736V69.736H91.608V72.736ZM125.144 72.736H128.144V61.088H125.144H122.144V72.736H125.144ZM125.144 61.088V64.088H138.2V61.088V58.088H125.144V61.088ZM138.2 61.088H135.2V74.016H138.2H141.2V61.088H138.2ZM138.2 74.016V71.016H126.424V74.016V77.016H138.2V74.016ZM126.424 74.016H123.424V85.536H126.424H129.424V74.016H126.424ZM126.424 85.536V82.536H90.328V85.536V88.536H126.424V85.536Z"
+        fill={mounted && resolvedTheme === "dark" ? "white" : "black"}
+        mask="url(#path-1-outside-1_6_5)"
+      />
+    </motion.svg>
+  );
+}
+
+const calcDistance = (el: HTMLElement) => {
+  const rect = el.getBoundingClientRect();
+  const scrollTop = document.documentElement.scrollTop;
+  const headerHeight = 56;
+  return scrollTop + rect.top + rect.height - headerHeight;
+};

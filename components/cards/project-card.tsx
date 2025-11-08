@@ -1,12 +1,12 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import Link from "next/link";
 import { ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+import { motion } from "motion/react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 
 export function ProjectCard({
   title,
@@ -28,38 +28,38 @@ export function ProjectCard({
   useEffect(() => {
     if (textRef.current) {
       const element = textRef.current;
-      const lineHeight = parseInt(getComputedStyle(element).lineHeight);
+      const lineHeight = Number.parseInt(getComputedStyle(element).lineHeight, 10);
       const maxHeight = lineHeight * 4; // 4 lines
       const actualHeight = element.scrollHeight;
 
       setIsClamped(actualHeight > maxHeight);
     }
-  }, [description]);
+  }, []);
 
   return (
     <Card
-      className="h-full p-4 transition-all duration-300 hover:shadow-[0_0_0_1px_hsl(var(--primary))] overflow-hidden group"
+      className="group h-full overflow-hidden p-4 transition-all duration-300 hover:shadow-[0_0_0_1px_hsl(var(--primary))]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex flex-col h-full">
-        <div className="flex items-center justify-between mb-3">
+      <div className="flex h-full flex-col">
+        <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Avatar className="h-8 w-8 shrink-0 p-1 border">
-              <AvatarImage src={icon} alt={title} />
+            <Avatar className="h-8 w-8 shrink-0 border p-1">
+              <AvatarImage alt={title} src={icon} />
             </Avatar>
             <Link
+              className="font-sans font-semibold tracking-tight transition-colors hover:text-primary hover:underline"
               href={url}
-              target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold font-sans tracking-tight hover:text-primary hover:underline transition-colors"
+              target="_blank"
             >
               {title}
             </Link>
             {status && (
               <Badge
+                className="bg-accent font-medium text-accent-foreground"
                 variant="outline"
-                className="bg-accent text-accent-foreground font-medium"
               >
                 {status}
                 <span className="relative ml-2 flex h-2 w-2">
@@ -70,10 +70,10 @@ export function ProjectCard({
             )}
           </div>
           <Link
+            className="text-muted-foreground transition-colors hover:text-primary"
             href={url}
-            target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
+            target="_blank"
           >
             <ExternalLink size={16} />
           </Link>
@@ -90,8 +90,8 @@ export function ProjectCard({
             }}
           >
             <p
+              className="text-muted-foreground text-xs"
               ref={textRef}
-              className="text-xs text-muted-foreground"
               style={{
                 display: "-webkit-box",
                 WebkitLineClamp: isHovered && isClamped ? "unset" : "4",

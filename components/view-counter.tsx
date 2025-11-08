@@ -1,6 +1,5 @@
 import { Eye } from "lucide-react";
 import { incrementPageViews } from "@/actions/increment-views";
-import { getPageViews } from "@/actions/get-views";
 
 export const dynamic = "force-dynamic";
 
@@ -11,7 +10,7 @@ export async function ViewCounter() {
     return (
       <div className="flex items-center gap-1 text-muted-foreground">
         <Eye size={14} />
-        <span className="text-xs">{views.toLocaleString()} visits</span>
+        <span className="text-xs">{views.toLocaleString()} visitors</span>
       </div>
     );
   } catch (error) {

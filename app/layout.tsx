@@ -1,83 +1,78 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/providers/theme-provider";
-import { sans, mono, serif } from "@/lib/fonts/fonts";
-import { Analytics } from "@vercel/analytics/react";
-import { appConfig } from "@/config/app";
+import "@/styles/globals.css";
+import type { Metadata, Viewport } from "next";
+import { Providers } from "@/components/providers";
+import { Navbar } from "@/components/navbar";
+import { SITE_INFO } from "@/config/site";
+import { USER } from "@/features/profile/data/user";
+import { mono, sans, serif } from "@/lib/fonts";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_INFO.url),
+  alternates: {
+    canonical: "/",
+  },
   title: {
-    default: appConfig.name,
-    template: `${appConfig.name} | %s`,
+    template: `%s – ${SITE_INFO.name}`,
+    default: `${USER.displayName} – ${USER.jobTitle}`,
   },
-  metadataBase: new URL(appConfig.url),
-  description: appConfig.description,
-  keywords: [
-    "portfolio",
-    "software engineer",
-    "software development",
-    "portfolio website",
-    "software engineering",
-    "software development tools",
-    "software development journey",
-    "software development portfolio",
-    "raz levi",
-    "raz levio",
-    "raz levi portfolio",
-    "raz levi software engineer",
-    "raz levi software development",
-    "raz levi software development portfolio",
+  description: SITE_INFO.description,
+  keywords: SITE_INFO.keywords,
+  authors: [
+    {
+      name: USER.username,
+      url: SITE_INFO.url,
+    },
   ],
-  creator: "razlevio",
-  authors: [{ name: "Raz Levi", url: "https://razlevio.com" }],
-  icons: {
-    icon: [{ url: "/avatar0.jpeg" }],
-    shortcut: "/avatar0.jpeg",
-    apple: "/avatar0.jpeg",
-  },
+  creator: USER.username,
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: appConfig.url,
-    title: appConfig.name,
-    siteName: appConfig.name,
-    description: appConfig.description,
+    siteName: SITE_INFO.name,
+    url: "/",
+    type: "profile",
+    firstName: USER.firstName,
+    lastName: USER.lastName,
+    username: USER.username,
+    gender: USER.gender,
     images: [
       {
-        url: appConfig.ogImage,
+        url: SITE_INFO.ogImage,
         width: 1200,
         height: 630,
-        alt: appConfig.name,
+        alt: SITE_INFO.name,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: appConfig.name,
-    description: appConfig.description,
-    images: [appConfig.ogImage],
-    creator: "@razlevio",
+    creator: "@razlevio", // Twitter username
+    images: [SITE_INFO.ogImage],
   },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+  icons: {
+    icon: [
+      {
+        url: "/favicon.png",
+        sizes: "any",
+      },
+      {
+        url: "/favicon.png",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: {
+      url: "/favicon.png",
+      type: "image/png",
+      sizes: "180x180",
     },
   },
-  verification: {
-    google: "google",
-    yandex: "yandex",
-    yahoo: "yahoo",
-  },
-  manifest: "/app.webmanifest",
 };
+
+export function generateViewport(): Viewport {
+  return {
+    width: "device-width",
+    initialScale: 1.0,
+    maximumScale: 1.0,
+    userScalable: false,
+  };
+}
 
 export default function RootLayout({
   children,
@@ -85,19 +80,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${serif.variable} ${mono.variable} ${sans.variable} font-mono`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Analytics />
-        </ThemeProvider>
+    <html
+      className={`${serif.variable} ${mono.variable} ${sans.variable} overscroll-none font-mono`}
+      lang="en"
+      suppressHydrationWarning
+    >
+      <body>
+        <Providers>
+          <Navbar />
+          <main className="max-w-screen overflow-x-hidden px-2">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );

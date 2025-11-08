@@ -1,13 +1,13 @@
-'use server'
+"use server";
 
-import { redis } from '@/lib/redis'
+import { redis } from "@/lib/redis";
 
 export async function incrementPageViews() {
   try {
-    const views = await redis.incr('page:views')
-    return { views }
+    const views = await redis.incr("page:views");
+    return { views };
   } catch (error) {
-    console.error('Failed to increment page views:', error)
-    return { views: 0 }
+    console.error("Failed to increment page views:", error);
+    return { views: 0 };
   }
 }
