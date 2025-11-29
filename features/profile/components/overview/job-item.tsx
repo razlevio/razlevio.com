@@ -9,12 +9,15 @@ import { addQueryParams } from "@/lib/utils";
 
 import { IntroItem } from "./intro-item";
 
+const developerOrEngineerRegex = /(developer|engineer)/i;
+const founderOrCoFounderRegex = /(founder|co-founder)/i;
+
 function getJobIcon(title: string) {
-  if (/(developer|engineer)/i.test(title)) {
+  if (developerOrEngineerRegex.test(title)) {
     return CodeXmlIcon;
   }
 
-  if (/(founder|co-founder)/i.test(title)) {
+  if (founderOrCoFounderRegex.test(title)) {
     return LightbulbIcon;
   }
 

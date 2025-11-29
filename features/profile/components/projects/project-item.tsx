@@ -1,4 +1,6 @@
-import { InfinityIcon, LinkIcon } from "lucide-react";
+// import { InfinityIcon, LinkIcon } from "lucide-react";
+import { LinkIcon } from "lucide-react";
+
 import Image from "next/image";
 
 import { Icons } from "@/components/icons";
@@ -13,7 +15,7 @@ import { Tag } from "@/components/ui/tag";
 import { SimpleTooltip } from "@/components/ui/tooltip";
 import { Prose } from "@/components/ui/typography";
 import { UTM_PARAMS } from "@/config/site";
-import { addQueryParams } from "@/utils/url";
+import { addQueryParams } from "@/lib/utils";
 
 import type { Project } from "../../types/projects";
 
@@ -24,20 +26,19 @@ export function ProjectItem({
   className?: string;
   project: Project;
 }) {
-  const { start, end } = project.period;
-  const isOngoing = !end;
+  // const { start, end } = project.period;
+  // const isOngoing = !end;
 
   return (
     <CollapsibleWithContext asChild defaultOpen={project.isExpanded}>
       <div className={className}>
-        <div className="flex items-center hover:bg-accent2">
+        <div className="flex items-center hover:bg-accent">
           {project.logo ? (
             <Image
               alt={project.title}
               aria-hidden="true"
               className="mx-4 flex size-6 shrink-0 select-none"
               height={32}
-              quality={100}
               src={project.logo}
               unoptimized
               width={32}
@@ -58,7 +59,7 @@ export function ProjectItem({
                   {project.title}
                 </h3>
 
-                <dl className="text-muted-foreground text-sm">
+                {/* <dl className="text-muted-foreground text-sm">
                   <dt className="sr-only">Period</dt>
                   <dd className="flex items-center gap-0.5">
                     <span>{start}</span>
@@ -75,7 +76,7 @@ export function ProjectItem({
                       <span>{end}</span>
                     )}
                   </dd>
-                </dl>
+                </dl> */}
               </div>
 
               <SimpleTooltip content="Open Project Link">
@@ -111,8 +112,8 @@ export function ProjectItem({
 
               {project.skills.length > 0 && (
                 <ul className="flex flex-wrap gap-1.5">
-                  {project.skills.map((skill, index) => (
-                    <li className="flex" key={index}>
+                  {project.skills.map((skill) => (
+                    <li className="flex" key={skill}>
                       <Tag>{skill}</Tag>
                     </li>
                   ))}

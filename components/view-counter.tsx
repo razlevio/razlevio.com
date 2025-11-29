@@ -1,5 +1,5 @@
 import { Eye } from "lucide-react";
-import { incrementPageViews } from "@/actions/increment-views";
+import { incrementPageViews } from "@/features/kv/actions";
 
 export const dynamic = "force-dynamic";
 

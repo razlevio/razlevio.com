@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import type { Experience } from "../../types/experiences";
 import { ExperiencePositionItem } from "./experience-position-item";
 
@@ -7,22 +6,16 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
   return (
     <div className="screen-line-after space-y-4 py-4">
       <div className="flex items-center gap-3">
-        <div className="flex size-6 shrink-0 select-none items-center justify-center">
-          {experience.companyLogo ? (
-            <Image
+        {experience.companyLogo ? (
+          <Avatar className="size-6 shrink-0 p-0.5">
+            <AvatarImage
               alt={experience.companyName}
-              aria-hidden
-              className="rounded-full"
-              height={24}
-              quality={100}
               src={experience.companyLogo}
-              unoptimized
-              width={24}
             />
-          ) : (
-            <span className="flex size-2 rounded-full bg-zinc-300 dark:bg-zinc-600" />
-          )}
-        </div>
+          </Avatar>
+        ) : (
+          <span className="flex size-2 shrink-0 rounded-full bg-zinc-300 dark:bg-zinc-600" />
+        )}
 
         <h3 className="font-medium text-lg leading-snug">
           {experience.companyName}

@@ -11,7 +11,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import React, { useCallback, useEffect, useState } from "react";
-import { toast } from "sonner";
 
 import {
   CommandDialog,
@@ -23,8 +22,7 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
-import { useSound } from "@/hooks/use-sound";
-import { cn, copyText } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { Icons } from "./icons";
 import { RazLeviMark } from "./razlevi-mark";
 import { Button } from "./ui/button";
@@ -40,15 +38,7 @@ type CommandLinkItem = {
   openInNewTab?: boolean;
 };
 
-const MENU_LINKS: CommandLinkItem[] = [
-  {
-    title: "Daifolio",
-    href: "/",
-    icon: RazLeviMark,
-  },
-];
-
-const DAIFOLIO_LINKS: CommandLinkItem[] = [
+const SECTIONS: CommandLinkItem[] = [
   {
     title: "About",
     href: "/#about",
@@ -89,15 +79,13 @@ const DAIFOLIO_LINKS: CommandLinkItem[] = [
 const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
   title: item.title,
   href: item.href,
-  iconImage: item.icon,
+  icon: item.icon as React.ComponentType<LucideProps>,
   openInNewTab: true,
 }));
 
 export function CommandMenu() {
   const router = useRouter();
-  const { setTheme, resolvedTheme } = useTheme();
   const [open, setOpen] = useState(false);
-  const playClick = useSound("/audio/ui-sounds/click.wav");
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -117,7 +105,7 @@ export function CommandMenu() {
           }
 
           e.preventDefault();
-          setOpen((open) => !open);
+          setOpen((prevOpen) => !prevOpen);
         }
       },
       { signal }
@@ -137,28 +125,6 @@ export function CommandMenu() {
       }
     },
     [router]
-  );
-
-  const handleCopyText = useCallback((text: string, message: string) => {
-    setOpen(false);
-    copyText(text);
-    toast.success(message);
-  }, []);
-
-  const createThemeHandler = useCallback(
-    (theme: "light" | "dark" | "system") => () => {
-      setOpen(false);
-      playClick();
-      setTheme(theme);
-
-      // if (!document.startViewTransition) {
-      //   setTheme(theme);
-      //   return;
-      // }
-
-      // document.startViewTransition(() => setTheme(theme));
-    },
-    [playClick, setTheme]
   );
 
   return (
@@ -197,7 +163,6 @@ export function CommandMenu() {
 
       <CommandDialog onOpenChange={setOpen} open={open}>
         <CommandInput placeholder="Type a command or search..." />
-
         <CommandList className="supports-timeline-scroll:scroll-fade-y min-h-80">
           <CommandEmpty>No results found.</CommandEmpty>
 
@@ -211,7 +176,7 @@ export function CommandMenu() {
 
           <CommandLinkGroup
             heading=""
-            links={DAIFOLIO_LINKS}
+            links={SECTIONS}
             onLinkSelect={handleOpenLink}
           />
           <CommandSeparator />
@@ -222,7 +187,7 @@ export function CommandMenu() {
             onLinkSelect={handleOpenLink}
           />
 
-          <CommandSeparator />
+          {/* <CommandSeparator /> */}
         </CommandList>
 
         <CommandMenuFooter />
@@ -301,11 +266,11 @@ function buildCommandMetaMap() {
     commandKind: "command",
   });
 
-  SOCIAL_LINK_ITEMS.forEach((item) => {
+  for (const item of SOCIAL_LINK_ITEMS) {
     commandMetaMap.set(item.title, {
       commandKind: "link",
     });
-  });
+  }
 
   return commandMetaMap;
 }
@@ -319,6 +284,7 @@ const ENTER_ACTION_LABELS: Record<CommandKind, string> = {
 };
 
 function CommandMenuFooter() {
+  const { resolvedTheme } = useTheme();
   const selectedCommandKind = useCommandState(
     (state) => COMMAND_META_MAP.get(state.value)?.commandKind ?? "page"
   );
@@ -328,7 +294,11 @@ function CommandMenuFooter() {
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 border-t bg-zinc-100/30 px-4 font-medium text-xs dark:bg-zinc-800/30">
-        <RazLeviMark aria-hidden className="size-6 text-muted-foreground" />
+        <RazLeviMark
+          aria-hidden
+          className="size-6 text-muted-foreground"
+          fill={resolvedTheme === "light" ? "#000" : "#fff"}
+        />
 
         <div className="flex shrink-0 items-center gap-2">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>

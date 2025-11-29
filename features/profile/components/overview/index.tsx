@@ -19,17 +19,14 @@ export function Overview() {
     <Panel>
       <h2 className="sr-only">Overview</h2>
       <PanelContent className="space-y-2">
-        {USER.jobs.map((job, index) => {
-          return (
-            <JobItem
-              // biome-ignore lint/suspicious/noArrayIndexKey: fine
-              company={job.company}
-              key={index}
-              title={job.title}
-              website={job.website}
-            />
-          );
-        })}
+        {USER.jobs.map((job) => (
+          <JobItem
+            company={job.company}
+            key={job.company+job.title}
+            title={job.title}
+            website={job.website}
+          />
+        ))}
 
         {SOCIAL_LINKS.filter((social) => isIconComponent(social.icon)).map(
           (social) => (

@@ -41,7 +41,7 @@ export function ProfileHeader() {
             "flex grow items-end pb-1 pl-4",
             "bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-primary)]/24"
           )}
-        ></div>
+        />
 
         <div className="border-edge border-t">
           <div className="flex h-12 items-center justify-between pr-2">

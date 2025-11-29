@@ -1,8 +1,10 @@
+import { useTheme } from "next-themes";
 import { BrandContextMenu } from "@/components/brand-context-menu";
-import { ChanhDaiMark } from "@/components/chanhdai-mark";
+import { RazLeviMark } from "@/components/razlevi-mark";
 import { cn } from "@/lib/utils";
 
 export function ProfileCover() {
+  const { resolvedTheme } = useTheme();
   return (
     <BrandContextMenu>
       <div
@@ -13,9 +15,9 @@ export function ProfileCover() {
           "bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-black/0.75 bg-center bg-size-[10px_10px] [--pattern-foreground:var(--color-zinc-950)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5"
         )}
       >
-        <ChanhDaiMark
+        <RazLeviMark
           className="h-14 w-28 sm:h-16 sm:w-32"
-          id="js-cover-mark"
+          fill={resolvedTheme === "light" ? "#000" : "#fff"}
         />
       </div>
     </BrandContextMenu>

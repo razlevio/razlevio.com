@@ -16,6 +16,7 @@ export type Project = {
   link: string;
   /** Tags/technologies for chips or filtering. */
   skills: string[];
+  shortDescription?: string;
   /** Optional rich description; Markdown and line breaks supported. */
   description?: string;
   /** Logo image URL (absolute or path under /public). */

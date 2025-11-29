@@ -56,12 +56,12 @@
 
   --animate-fade-in: fade-in var(--tw-duration, 200ms) ease-out;
   --animate-fade-out: fade-out var(--tw-duration, 200ms) ease-out;
-  --animate-collapsible-fade-down:
-    collapsible-down var(--tw-duration, 200ms) ease-out, fade-in
-    var(--tw-duration, 200ms) ease-out;
-  --animate-collapsible-fade-up:
-    collapsible-up var(--tw-duration, 200ms) ease-out, fade-out
-    var(--tw-duration, 200ms) ease-out;
+  --animate-collapsible-fade-down: collapsible-down var(--tw-duration, 200ms)
+      ease-out,
+    fade-in var(--tw-duration, 200ms) ease-out;
+  --animate-collapsible-fade-up: collapsible-up var(--tw-duration, 200ms)
+      ease-out,
+    fade-out var(--tw-duration, 200ms) ease-out;
 
   @keyframes fade-in {
     from {
@@ -112,15 +112,12 @@
   --selection: oklch(0.141 0.005 285.823);
   --selection-foreground: oklch(0.985 0 0);
   --radius: 0.75rem;
-  --shadow-custom:
-    0px 0px 0px 1px rgba(0, 0, 0, 0.08),
+  --shadow-custom: 0px 0px 0px 1px rgba(0, 0, 0, 0.08),
     0px 1px 2px -1px rgba(0, 0, 0, 0.08), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
-  --shadow-custom-brand:
-    0px 1px 2px rgba(0, 0, 0, 0.4),
+  --shadow-custom-brand: 0px 1px 2px rgba(0, 0, 0, 0.4),
     0px 0px 0px 1px var(--color-brand-secondary),
     inset 0px 0.75px 0px rgba(255, 255, 255, 0.2);
-  --shadow-custom-contrast:
-    0px 1px 2px rgba(0, 0, 0, 0.4),
+  --shadow-custom-contrast: 0px 1px 2px rgba(0, 0, 0, 0.4),
     0px 0px 0px 1px var(--color-contrast),
     inset 0px 0.75px 0px rgba(255, 255, 255, 0.2);
   --shadow-popover: 0 6px 24px rgba(0, 0, 0, 0.25);
@@ -138,7 +135,7 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
-  --accent: oklch(0.274 0.006 286.033);
+  --accent: oklch(0.19 0.006 286.033);
   --accent-foreground: oklch(0.985 0 0);
   --muted: oklch(0.274 0.006 286.033);
   --muted-foreground: oklch(0.705 0.015 286.067);
@@ -168,11 +165,11 @@
 }
 
 @utility screen-line-before {
-  @apply relative before:absolute before:top-0 before:-left-[100vw] before:-z-1 before:h-px before:w-[200vw] before:bg-edge;
+  @apply relative before:absolute before:top-0 before:left-0 before:right-0 before:-z-1 before:h-px before:bg-edge;
 }
 
 @utility screen-line-after {
-  @apply relative after:absolute after:bottom-0 after:-left-[100vw] after:-z-1 after:h-px after:w-[200vw] after:bg-edge;
+  @apply relative after:absolute after:bottom-0 after:left-0 after:right-0 after:-z-1 after:h-px after:bg-edge;
 }
 
 @layer base {
