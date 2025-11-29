@@ -15,19 +15,19 @@ export function ProfileHeader() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <Image
             alt={`${USER.displayName}'s avatar`}
-            className="size-32 select-none rounded-full ring-1 ring-border ring-offset-2 ring-offset-background sm:size-40"
+            className="size-20 select-none rounded-full ring-1 ring-border ring-offset-1 ring-offset-background sm:size-40 sm:ring-offset-2"
             fetchPriority="high"
-            height={128}
+            height={160}
             src={USER.avatar}
-            width={128}
+            width={160}
           />
         </div>
 
         <SimpleTooltip content="I'm from Tel Aviv, Israel">
-          {/* Flag of Viet Nam */}
+          {/* Flag of Israel */}
           <Image
             alt="Israel Flag"
-            className="-left-px absolute top-0 h-8 sm:h-9"
+            className="-left-px absolute top-0 h-6 sm:h-9"
             height={50}
             src="/israel.svg"
             width={50}
@@ -38,7 +38,7 @@ export function ProfileHeader() {
       <div className="flex flex-1 flex-col">
         <div
           className={cn(
-            "flex grow items-end pb-1 pl-4",
+            "hidden grow items-end pb-1 pl-4 sm:flex",
             "bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-primary)]/24"
           )}
         />
@@ -63,7 +63,7 @@ export function ProfileHeader() {
             </h1>
             <ViewCounter />
           </div>
-          <div className="h-12 border-edge border-t py-1 pl-4 sm:h-auto">
+          <div className="h-12 border-edge border-t py-1 pl-2 sm:h-auto sm:pl-4">
             <FlipSentences sentences={USER.flipSentences} />
           </div>
         </div>

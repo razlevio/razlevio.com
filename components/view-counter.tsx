@@ -8,7 +8,7 @@ export async function ViewCounter() {
     const { views } = await incrementPageViews();
 
     return (
-      <div className="flex items-center gap-1 text-muted-foreground">
+      <div className="hidden items-center gap-1 text-muted-foreground sm:flex">
         <Eye size={14} />
         <span className="text-xs">{views.toLocaleString()} visitors</span>
       </div>
