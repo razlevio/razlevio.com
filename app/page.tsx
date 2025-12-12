@@ -8,6 +8,8 @@ import { Projects } from "@/features/profile/components/projects";
 import { Stack } from "@/features/profile/components/stack/stack";
 import { cn } from "@/lib/utils";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <div className="mx-auto max-w-3xl border-edge border-x">
