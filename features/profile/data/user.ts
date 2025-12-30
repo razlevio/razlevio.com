@@ -33,7 +33,7 @@ export const USER: User = {
     },
   ],
   about: `
-I'm Raz a full-stack engineer and founder based in 🇮🇱 Tel Aviv. Currently cooking at Israel National Digital Agency while leading as Founder & CTO at [COYA](https://coya.gg). I turn complex challenges into elegant solutions - whether architecting systems, leading teams, or shipping products from 0 → 1.
+Experienced full-stack engineer and founder based in 🇮🇱 Tel Aviv. Currently cooking at Israel National Digital Agency while leading as Founder & CTO at [COYA](https://coya.gg). I turn complex challenges into elegant solutions - whether architecting systems, leading teams, or shipping products from 0 → 1.
 
 Interests include 🎾, 🕹️, 📈, 📱, 🥊, 🏎️, ⛷️, 🎨, ☕️, 🍷, ⌚. I'm told I have strong opinions on espresso, stronger positions in tech stocks, a respectable forehand, and an irrational love for anything that goes fast.
 
