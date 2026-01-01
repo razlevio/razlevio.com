@@ -12,6 +12,7 @@ export const PROJECTS: Project[] = [
       "Social Network",
       "Gaming Platform",
       "Real-time Collaboration",
+      "Live rooms",
       "Next.js 16",
       "TypeScript",
       "WebRTC",
