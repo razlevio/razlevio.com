@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { About } from "@/features/profile/components/about";
 import { Brand } from "@/features/profile/components/brand";
 import { Experiences } from "@/features/profile/components/experiences";
@@ -25,8 +26,9 @@ export default function Home() {
       <Experiences />
       <Separator />
       <Stack />
-      <Separator />
       <Brand />
+      <Image alt="Cover" height={1500} src="/cover-21:9.png" width={1000} />
+      <Separator />
     </div>
   );
 }
