@@ -27,7 +27,7 @@ export default function Home() {
       <Separator />
       <Stack />
       <Brand />
-      <Image alt="Cover" height={1500} src="/cover-21:9.png" width={1000} />
+      <Image alt="Brand" height={1500} src="/brand.webp" width={1000} className="opacity-90" />
       <Separator />
     </div>
   );
