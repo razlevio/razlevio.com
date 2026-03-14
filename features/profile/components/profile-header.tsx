@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { FlipSentences } from "@/components/flip-sentences";
-import { SimpleTooltip } from "@/components/ui/tooltip";
 // import { PronounceMyName } from "./pronounce-my-name";
 // import { VerifiedIcon } from "./verified-icon";
 import { ViewCounter } from "@/components/view-counter";
@@ -9,41 +8,33 @@ import { cn } from "@/lib/utils";
 
 export function ProfileHeader() {
   return (
-    <div className="relative flex border-edge border-x border-b">
-      <div className="shrink-0 border-edge border-r">
-        <div className="mx-0.5 my-[3px]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+    <div className="relative flex border-edge border-b">
+      <div className="shrink-0 border-r">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <div //className="p-1.5"
+          className=""
+        >
           <Image
             alt={`${USER.displayName}'s avatar`}
-            className="size-20 select-none rounded-full ring-1 ring-border ring-offset-1 ring-offset-background sm:size-40 sm:ring-offset-2"
+            // className="size-20 select-none rounded-lg border p-1.5 sm:size-40"
+            className="size-20 select-none sm:size-40"
             fetchPriority="high"
             height={160}
             src={USER.avatar}
             width={160}
           />
         </div>
-
-        <SimpleTooltip content="I'm from Tel Aviv, Israel">
-          {/* Flag of Israel */}
-          <Image
-            alt="Israel Flag"
-            className="-left-px absolute top-0 h-6 sm:h-9"
-            height={50}
-            src="/israel.svg"
-            width={50}
-          />
-        </SimpleTooltip>
       </div>
 
       <div className="flex flex-1 flex-col">
         <div
           className={cn(
-            "hidden grow items-end pb-1 pl-4 sm:flex",
-            "bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-primary)]/24"
+            "hidden grow items-end border-b sm:flex",
+            "bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-edge)]/56"
           )}
         />
 
-        <div className="border-edge border-t">
+        <div className="border-edge">
           <div className="flex h-12 items-center justify-between pr-2">
             <h1 className="flex items-center pl-4 font-bold font-serif text-4xl">
               {USER.displayName}
@@ -63,7 +54,7 @@ export function ProfileHeader() {
             </h1>
             <ViewCounter />
           </div>
-          <div className="h-12 border-edge border-t py-1 pl-2 sm:h-auto sm:pl-4">
+          <div className="h-auto overflow-hidden border-edge border-t px-4 py-1">
             <FlipSentences sentences={USER.flipSentences} />
           </div>
         </div>

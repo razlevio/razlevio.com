@@ -8,9 +8,11 @@ export async function ViewCounter() {
     const { views } = await incrementPageViews();
 
     return (
-      <div className="hidden items-center gap-1 text-muted-foreground sm:flex">
+      <div className="flex items-center gap-1 text-muted-foreground">
         <Eye size={14} />
-        <span className="text-xs">{views.toLocaleString()} visitors</span>
+        <span className="text-xs">
+          {Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 }).format(views)}
+        </span>
       </div>
     );
   } catch (error) {

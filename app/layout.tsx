@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 import type { Metadata, Viewport } from "next";
 import { Providers } from "@/components/providers";
-import { Navbar } from "@/components/navbar";
 import { SITE_INFO } from "@/config/site";
 import { USER } from "@/features/profile/data/user";
 import { mono, sans, serif } from "@/lib/fonts";
@@ -87,8 +86,7 @@ export default function RootLayout({
     >
       <body>
         <Providers>
-          <Navbar />
-          <main className="max-w-screen overflow-x-hidden px-2">
+          <main className="no-scrollbar max-w-screen overflow-x-clip">
             {children}
           </main>
         </Providers>

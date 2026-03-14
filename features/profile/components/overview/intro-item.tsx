@@ -2,6 +2,7 @@ import type { Icon } from "@tabler/icons-react";
 import type { LucideProps } from "lucide-react";
 
 export function IntroItem({
+  // biome-ignore lint/nursery/noShadow: fine here
   icon: Icon,
   content,
   href,

@@ -1,3 +1,5 @@
+export type ProjectStatus = "live" | "building" | "private" | "archived";
+
 export type Project = {
   /** Stable unique identifier (used as list key/anchor). */
   id: string;
@@ -21,6 +23,12 @@ export type Project = {
   description?: string;
   /** Logo image URL (absolute or path under /public). */
   logo?: string;
+  /** Preview image for grid card view. */
+  image?: string;
+  /** Label describing the screenshot section (e.g. "Home Feed", "Dashboard"). */
+  imageLabel?: string;
+  /** Project status shown as a badge. */
+  status?: ProjectStatus;
   /** Whether the project card is expanded by default in the UI. */
   isExpanded?: boolean;
 };

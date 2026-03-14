@@ -6,6 +6,7 @@ import {
   BriefcaseBusinessIcon,
   CornerDownLeftIcon,
   LetterTextIcon,
+  Feather
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -55,10 +56,15 @@ const SECTIONS: CommandLinkItem[] = [
     icon: BriefcaseBusinessIcon,
   },
   {
-    title: "Stack",
-    href: "/#stack",
-    icon: Icons.ts,
-  },
+    title: "Brand",
+    href: "/#brand",
+    icon: Feather,
+  }
+  // {
+  //   title: "Stack",
+  //   href: "/#stack",
+  //   icon: Icons.ts,
+  // },
   // {
   //   title: "Honors & Awards",
   //   href: "/#awards",
@@ -149,16 +155,16 @@ export function CommandMenu() {
           />
         </svg>
 
-        <span className="font-medium font-sans text-sm/4 sm:hidden">
+        <span className="hidden font-medium font-sans text-sm/4 sm:block">
           Search
         </span>
 
-        <CommandMenuKbd className="hidden tracking-wider sm:in-[.os-macos_&]:flex">
+        {/* <CommandMenuKbd className="hidden tracking-wider sm:in-[.os-macos_&]:flex">
           ⌘K
         </CommandMenuKbd>
         <CommandMenuKbd className="hidden sm:not-[.os-macos_&]:flex">
           ⌘K
-        </CommandMenuKbd>
+        </CommandMenuKbd> */}
       </Button>
 
       <CommandDialog onOpenChange={setOpen} open={open}>

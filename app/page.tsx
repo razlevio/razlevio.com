@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Navbar } from "@/components/navbar";
 import { About } from "@/features/profile/components/about";
 import { Brand } from "@/features/profile/components/brand";
 import { Experiences } from "@/features/profile/components/experiences";
@@ -6,14 +7,13 @@ import { GitHubContributions } from "@/features/profile/components/github-contri
 import { Overview } from "@/features/profile/components/overview";
 import { ProfileHeader } from "@/features/profile/components/profile-header";
 import { Projects } from "@/features/profile/components/projects";
-import { Stack } from "@/features/profile/components/stack/stack";
+// import { Stack } from "@/features/profile/components/stack/stack";
 import { cn } from "@/lib/utils";
-
-export const dynamic = "force-dynamic";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-3xl border-edge border-x">
+    <div className="no-scrollbar mx-auto max-w-2xl border-edge border-x">
+      <Navbar />
       <ProfileHeader />
       <Separator />
       <Overview />
@@ -25,9 +25,15 @@ export default function Home() {
       <Separator />
       <Experiences />
       <Separator />
-      <Stack />
+      {/* <Stack /> */}
       <Brand />
-      <Image alt="Brand" height={1500} src="/brand.webp" width={1000} className="opacity-90" />
+      <Image
+        alt="Brand"
+        className="opacity-90"
+        height={1500}
+        src="/brand.webp"
+        width={1000}
+      />
       <Separator />
     </div>
   );
@@ -41,7 +47,7 @@ function Separator({ className }: { className?: string }) {
         "before:-z-1 before:absolute before:right-0 before:left-0 before:h-8",
         "before:bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:[--pattern-foreground:var(--color-edge)]/56",
         className
-      )}
+    )}
     />
   );
 }

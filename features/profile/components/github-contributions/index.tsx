@@ -9,7 +9,7 @@ export function GitHubContributions() {
 
   return (
     <Panel>
-      <h2 className="sr-only">GitHub Contributions</h2>
+      <p className="sr-only">GitHub Contributions</p>
 
       <Suspense fallback={<GitHubContributionFallback />}>
         <GitHubContributionGraph contributions={contributions} />

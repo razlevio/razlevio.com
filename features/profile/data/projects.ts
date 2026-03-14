@@ -4,10 +4,10 @@ export const PROJECTS: Project[] = [
   {
     id: "coya",
     title: "COYA",
-    period: {
-      start: "11.2024",
-    },
+    period: { start: "11.2024" },
     link: "https://coya.gg",
+    status: "live",
+    image: "/projects/coya-preview.png",
     skills: [
       "Social Network",
       "Gaming Platform",
@@ -17,8 +17,7 @@ export const PROJECTS: Project[] = [
       "TypeScript",
       "WebRTC",
     ],
-    shortDescription:
-      "Next-generation social network platoform for gamers, creators, and communities. Connect with gamers worldwide, discover new games, and build your gaming legacy.",
+    shortDescription: "Social ecosystem and tools to help gamers connect, play, grow and earn. COYA helps gamers find a teammates to play with right now, not chat about it for 3 hours.",
 
     description: `Next-generation social network platoform for gamers, creators, and communities. Connect with gamers worldwide, discover new games, and build your gaming legacy.
 
@@ -34,10 +33,43 @@ export const PROJECTS: Project[] = [
 
 - 👥 Community-driven content creation and sharing
 
-
-
 - 📊 Stats tracking and achievement showcases`,
     logo: "/projects/coya.svg",
+    isExpanded: false,
+  },
+  {
+    id: "goalset",
+    title: "Goalset",
+    period: {
+      start: "06.2025",
+    },
+    link: "https://goalset.ai",
+    status: "building",
+    skills: [
+      "AI Application",
+      "LLM Integration",
+      "Personal Growth",
+      "Next.js 16",
+      "TypeScript",
+      "OpenAI API",
+      "Supabase",
+      "Vercel AI SDK",
+    ],
+    shortDescription: "AI-powered goal-setting app that transforms personal growth into a seamless, intuitive journey by leveraging LLM's to help define goals and ensure their achievement.",
+    description: `AI-powered goal-setting platform that transforms personal growth into an actionable journey.
+
+- 🤖 Conversational AI to help articulate and define clear, achievable goals
+
+- 🎯 Smart breakdown of goals into milestones and actionable steps
+
+- 📊 Visual progress tracking with streak monitoring
+
+- 💡 Personalized AI insights based on behavior patterns
+
+- 🔔 Smart reminders and motivational prompts
+
+- 🔒 Privacy-first with end-to-end encryption`,
+    logo: "/projects/goalset.svg",
     isExpanded: false,
   },
   {
@@ -47,6 +79,7 @@ export const PROJECTS: Project[] = [
       start: "01.2025",
     },
     link: "private-client",
+    status: "private",
     skills: [
       "Government Platform",
       "Digital Transformation",
@@ -58,8 +91,7 @@ export const PROJECTS: Project[] = [
       "shadcn/ui",
       "Recharts",
     ],
-    shortDescription:
-      "Centralized web platform that serves as the operational backbone for the governmental task force for digital transformation in local government.",
+    shortDescription: "Centralized web platform that serves as the operational backbone for the governmental task force for digital transformation in local government.",
     description: `Centralized web platform that serves as the operational backbone for the governmental task force for digital transformation in local government. The platform tracks and manages 259+ Israeli municipalities, enabling the inter-ministerial unit to monitor digital transformation initiatives across multiple teams and munis. The platform captures and analyzes interactions between agency personnel and municipal officials, manages contact relationships, and provides data-driven insights for strategic planning and decision-making.
 
 **Key Features:**
@@ -85,41 +117,6 @@ export const PROJECTS: Project[] = [
     isExpanded: false,
   },
   {
-    id: "goalset",
-    title: "Goalset",
-    period: {
-      start: "06.2025",
-    },
-    link: "https://goalset.ai",
-    skills: [
-      "AI Application",
-      "LLM Integration",
-      "Personal Growth",
-      "Next.js 16",
-      "TypeScript",
-      "OpenAI API",
-      "Supabase",
-      "Vercel AI SDK",
-    ],
-    shortDescription:
-      "AI-powered goal-setting app that transforms personal growth into a seamless, intuitive journey by leveraging LLM's to help define goals and ensure their achievement.",
-    description: `AI-powered goal-setting platform that transforms personal growth into an actionable journey.
-
-- 🤖 Conversational AI to help articulate and define clear, achievable goals
-
-- 🎯 Smart breakdown of goals into milestones and actionable steps
-
-- 📊 Visual progress tracking with streak monitoring
-
-- 💡 Personalized AI insights based on behavior patterns
-
-- 🔔 Smart reminders and motivational prompts
-
-- 🔒 Privacy-first with end-to-end encryption`,
-    logo: "/projects/goalset.svg",
-    isExpanded: false,
-  },
-  {
     id: "munigrant",
     title: "Munigrant",
     period: {
@@ -127,6 +124,7 @@ export const PROJECTS: Project[] = [
       end: "01.2025",
     },
     link: "private-client",
+    status: "private",
     skills: [
       "Government CRM",
       "Fund Management",
@@ -163,6 +161,8 @@ export const PROJECTS: Project[] = [
       end: "01.2024",
     },
     link: "https://thinkmate.vercel.app",
+    status: "archived",
+    image: "/projects/thinkmate-preview.png",
     skills: [
       "AI Application",
       "Idea Generation",
@@ -197,6 +197,7 @@ export const PROJECTS: Project[] = [
       end: "06.2023",
     },
     link: "https://neexus.vercel.app",
+    status: "archived",
     skills: [
       "Collaborative Editor",
       "Real-time Collaboration",
@@ -206,6 +207,7 @@ export const PROJECTS: Project[] = [
       "Liveblocks",
       "Tiptap",
     ],
+    image: "/projects/nexus-preview.png",
     shortDescription:
       "A collaborative, real-time document editor that empowers seamless organization, flexible workspaces, and secure file management, streamlining productivity.",
 

@@ -1,5 +1,5 @@
 import { EXPERIENCES } from "../../data/experiences";
-import { Panel, PanelContent, PanelHeader, PanelTitle } from "../panel";
+import { Panel, PanelHeader, PanelTitle } from "../panel";
 import { ExperienceItem } from "./experience-item";
 
 export function Experiences() {
@@ -8,13 +8,11 @@ export function Experiences() {
       <PanelHeader>
         <PanelTitle>Experience</PanelTitle>
       </PanelHeader>
-      <PanelContent>
-        <div className="pr-2 pl-4">
-          {EXPERIENCES.map((experience) => (
-            <ExperienceItem experience={experience} key={experience.id} />
-          ))}
-        </div>
-      </PanelContent>
+      <div className="[&>*:not(:last-child)]:border-edge [&>*:not(:last-child)]:border-b">
+        {EXPERIENCES.map((experience) => (
+          <ExperienceItem experience={experience} key={experience.id} />
+        ))}
+      </div>
     </Panel>
   );
 }

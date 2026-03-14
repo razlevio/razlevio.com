@@ -63,7 +63,7 @@ export function FlipSentences({
           opacity: 1,
         }}
         className={cn(
-          "select-none text-balance font-mono text-muted-foreground text-sm",
+          "line-clamp-1 select-none font-mono text-muted-foreground text-sm",
           className
         )}
         exit={{

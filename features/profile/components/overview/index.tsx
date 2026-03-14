@@ -1,6 +1,6 @@
 import type { Icon } from "@tabler/icons-react";
 import type { LucideIcon, LucideProps } from "lucide-react";
-import { MapPinIcon } from "lucide-react";
+// import { MapPinIcon } from "lucide-react";
 import type { ComponentType } from "react";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
 import { USER } from "@/features/profile/data/user";
@@ -17,7 +17,7 @@ function isIconComponent(
 export function Overview() {
   return (
     <Panel>
-      <h2 className="sr-only">Overview</h2>
+      <p className="sr-only">Overview</p>
       <PanelContent className="space-y-2">
         {USER.jobs.map((job) => (
           <JobItem
@@ -38,7 +38,7 @@ export function Overview() {
             />
           )
         )}
-        <IntroItem content={USER.address} icon={MapPinIcon} />
+        {/* <IntroItem content={USER.address} icon={MapPinIcon} /> */}
       </PanelContent>
     </Panel>
   );

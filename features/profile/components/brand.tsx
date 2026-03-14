@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { useTheme } from "next-themes";
 import { RazLeviMark } from "@/components/razlevi-mark";
 import { useIsClient } from "@/hooks/use-is-client";
-import { Panel } from "./panel";
+import { Panel, PanelHeader, PanelTitle } from "./panel";
 
 const BrandContextMenu = dynamic(() =>
   import("@/components/brand-context-menu").then((mod) => mod.BrandContextMenu)
@@ -15,9 +15,9 @@ export function Brand() {
 
   return (
     <Panel>
-      {/* <PanelHeader>
+      <PanelHeader>
         <PanelTitle>Brand</PanelTitle>
-      </PanelHeader> */}
+      </PanelHeader>
 
       <BrandContextMenu>
         <div className="flex h-16 items-center justify-center sm:h-28">

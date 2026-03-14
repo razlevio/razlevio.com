@@ -36,7 +36,7 @@ export function JobItem({
   return (
     <IntroItem
       content={
-        <>
+        <span className="line-clamp-1">
           {title} @
           <a
             className="ml-0.5 font-medium underline-offset-4 hover:text-link hover:underline"
@@ -46,7 +46,7 @@ export function JobItem({
           >
             {company}
           </a>
-        </>
+        </span>
       }
       icon={getJobIcon(title)}
     />

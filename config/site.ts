@@ -4,7 +4,7 @@ export const SITE_INFO = {
   name: USER.displayName,
   url: process.env.APP_URL || "https://razlevio.com",
   ogImage: USER.ogImage,
-  description: USER.bio,
+  description: USER.description,
   keywords: USER.keywords,
 };
 

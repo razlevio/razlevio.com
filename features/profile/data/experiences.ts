@@ -1,48 +1,48 @@
 import type { Experience } from "../types/experiences";
 
 export const EXPERIENCES: Experience[] = [
-//   {
-//     id: "coya",
-//     companyName: "COYA",
-//     companyLogo: "/experiences/coya.png",
-//     positions: [
-//       {
-//         id: "coya-founder-cto",
-//         title: "Founder & CTO",
-//         employmentPeriod: {
-//           start: "09.2024",
-//         },
-//         employmentType: "Full-time",
-//         icon: "business",
-//         description: `Leading the active development of [COYA](https://coya.gg), a next-generation social network designed specifically for gamers.
+  {
+    id: "coya",
+    companyName: "COYA",
+    companyLogo: "/experiences/coya.svg",
+    positions: [
+      {
+        id: "coya-founder-cto",
+        title: "Founder & CTO",
+        employmentPeriod: {
+          start: "09.2024",
+        },
+        employmentType: "Full-time",
+        icon: "business",
+        description: `Leading the active development of [COYA](https://coya.gg), a next-generation social network designed specifically for gamers.
 
-// - Building a comprehensive gaming social platform that seamlessly connects gamers, creators, and communities to enhance gaming experiences, enable real-time collaboration, and facilitate gaming-related content discovery.
-// - Architecting scalable infrastructure to support millions of users, real-time interactions, and high-performance gaming integrations.
-// - Developing innovative features that bridge the gap between gaming and social networking, creating unique value for the gaming community.
-// - Leading product strategy, technical vision, and engineering execution to bring the platform to market.
-// - Building a team and culture focused on delivering exceptional gaming experiences through cutting-edge technology.
-// - Creating a platform that empowers gamers to discover new games, connect with like-minded players, share achievements, and build lasting gaming communities.`,
-//         skills: [
-//           "TypeScript",
-//           "Next.js",
-//           "React",
-//           "Node.js",
-//           "System Architecture",
-//           "Product Strategy",
-//           "Technical Leadership",
-//           "Startup Leadership",
-//           "Gaming Platforms",
-//           "Social Networks",
-//           "Real-time Systems",
-//           "Scalability",
-//           "Team Building",
-//           "Innovation",
-//         ],
-//         isExpanded: false,
-//       },
-//     ],
-//     isCurrentEmployer: true,
-//   },
+- Building a comprehensive gaming social platform that seamlessly connects gamers, creators, and communities to enhance gaming experiences, enable real-time collaboration, and facilitate gaming-related content discovery.
+- Architecting scalable infrastructure to support millions of users, real-time interactions, and high-performance gaming integrations.
+- Developing innovative features that bridge the gap between gaming and social networking, creating unique value for the gaming community.
+- Leading product strategy, technical vision, and engineering execution to bring the platform to market.
+- Building a team and culture focused on delivering exceptional gaming experiences through cutting-edge technology.
+- Creating a platform that empowers gamers to discover new games, connect with like-minded players, share achievements, and build lasting gaming communities.`,
+        skills: [
+          "TypeScript",
+          "Node.js",
+          "Next.js",
+          "React",
+          "Expo",
+          "Real-time",
+          "Internationalization",
+          "System Architecture",
+          "Product Strategy",
+          "Technical Leadership",
+          "Startup Leadership",
+          "Social Networks",
+          "Scalability",
+          "Team Building",
+        ],
+        isExpanded: false,
+      },
+    ],
+    isCurrentEmployer: true,
+  },
   {
     id: "matrix-dna",
     companyName: "Matrix DNA",
@@ -56,7 +56,7 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Full-time",
         icon: "code",
-        description: `Serving as lead software expert on high-impact government projects, delivering software platforms with national impact.
+        description: `Serving as lead software expert on high-impact projects, delivering software platforms with national impact.
 
 - Deployed to Israel National Digital Agency (INDA) as lead full stack engineer for the governmental task force for digital transformation in local government.
 - Designed and delivered mission-critical systems handling multi-million shekel operations, inter-ministerial collaboration, and nationwide municipal data tracking.
@@ -65,9 +65,10 @@ export const EXPERIENCES: Experience[] = [
 - Collaborate with inter-ministerial teams to deliver solutions that drive digital transformation at scale.`,
         skills: [
           "TypeScript",
+          "Node.js",
           "Next.js",
           "React",
-          "Node.js",
+          "AWS",
           "System Architecture",
           "Government Systems",
           "Security & Compliance",
@@ -104,9 +105,9 @@ export const EXPERIENCES: Experience[] = [
 - Implemented robust security measures and compliance protocols for sensitive government data.`,
         skills: [
           "TypeScript",
+          "Node.js",
           "Next.js",
           "React",
-          "Node.js",
           "CRM Systems",
           "Data Analytics",
           "Government Systems",
@@ -148,7 +149,6 @@ export const EXPERIENCES: Experience[] = [
           "Operating Systems",
           "Networks",
           "Programming",
-          "Self-learning",
           "Academic Excellence",
         ],
         isExpanded: false,

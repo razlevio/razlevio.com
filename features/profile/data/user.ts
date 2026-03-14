@@ -7,6 +7,8 @@ export const USER: User = {
   username: "razlevio",
   gender: "male",
   pronouns: "he/him",
+  description:
+    "Experienced full-stack engineer and founder. Currently leading as Founder & CTO at [COYA](https://coya.gg) while cooking at Israel National Digital Agency. I turn complex challenges into elegant solutions - whether architecting systems, leading teams, or shipping products from 0 → 1.",
   bio: "I get computers ‘puting",
   flipSentences: [
     "I get computers ‘puting",
@@ -22,25 +24,25 @@ export const USER: User = {
   jobTitle: "Full Stack Engineer",
   jobs: [
     {
-      title: "Full Stack Engineer",
-      company: "Israel National Digital Agency",
-      website: "https://www.gov.il/",
-    },
-    {
       title: "Founder and CTO",
       company: "COYA",
       website: "https://coya.gg",
     },
+    {
+      title: "Full Stack Engineer",
+      company: "Israel National Digital Agency",
+      website: "https://www.gov.il/",
+    },
   ],
   about: `
-Experienced full-stack engineer and founder based in 🇮🇱 Tel Aviv. Currently cooking at Israel National Digital Agency while leading as Founder & CTO at [COYA](https://coya.gg). I turn complex challenges into elegant solutions - whether architecting systems, leading teams, or shipping products from 0 → 1.
+Experienced full-stack engineer and founder. Currently leading as Founder & CTO at [COYA](https://coya.gg) while cooking at Israel National Digital Agency. I turn complex challenges into elegant solutions - whether architecting systems, leading teams, or shipping products from 0 → 1.
 
 Interests include 🎾, 🕹️, 📈, 📱, 🥊, 🏎️, ⛷️, 🎨, ☕️, 🍷, ⌚. I'm told I have strong opinions on espresso, stronger positions in tech stocks, a respectable forehand, and an irrational love for anything that goes fast.
 
 Always building.
   `,
-  avatar: "/avatar.png",
-  ogImage: "/banner.png",
+  avatar: "/avatar2.png",
+  ogImage: "/rl-og.png",
   namePronunciationUrl: "/audio/razlevio.mp3",
   keywords: ["razlevio", "raz levi", "raz levio"],
   dateCreated: "2020-01-01", // YYYY-MM-DD
