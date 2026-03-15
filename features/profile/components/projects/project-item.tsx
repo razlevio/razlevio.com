@@ -1,4 +1,3 @@
-// import { InfinityIcon, LinkIcon } from "lucide-react";
 import { LinkIcon } from "lucide-react";
 
 import Image from "next/image";
@@ -19,6 +18,13 @@ import { addQueryParams } from "@/lib/utils";
 
 import type { Project } from "../../types/projects";
 
+const STATUS_CONFIG = {
+  live: { label: "Live", color: "bg-green-500" },
+  building: { label: "Building", color: "bg-blue-500" },
+  private: { label: "Private", color: "bg-yellow-500" },
+  archived: { label: "Archived", color: "bg-muted-foreground" },
+} as const;
+
 export function ProjectItem({
   className,
   project,
@@ -26,8 +32,7 @@ export function ProjectItem({
   className?: string;
   project: Project;
 }) {
-  // const { start, end } = project.period;
-  // const isOngoing = !end;
+  const status = project.status ? STATUS_CONFIG[project.status] : null;
 
   return (
     <CollapsibleWithContext asChild defaultOpen={project.isExpanded}>
@@ -37,7 +42,7 @@ export function ProjectItem({
             <Image
               alt={project.title}
               aria-hidden="true"
-              className="mx-4 flex size-6 shrink-0 select-none"
+              className="mx-4 flex size-7 shrink-0 select-none"
               height={32}
               src={project.logo}
               unoptimized
@@ -55,29 +60,24 @@ export function ProjectItem({
           <div className="flex-1 border-edge border-l border-dashed">
             <CollapsibleTrigger className="flex w-full select-none items-center gap-4 p-4 pr-2 text-left">
               <div className="flex-1">
-                <h3 className="mb-1 text-balance font-medium leading-snug">
+                <h3 className="text-balance font-medium leading-snug">
                   {project.title}
                 </h3>
-
-                {/* <dl className="text-muted-foreground text-sm">
-                  <dt className="sr-only">Period</dt>
-                  <dd className="flex items-center gap-0.5">
-                    <span>{start}</span>
-                    <span className="font-mono">—</span>
-                    {isOngoing ? (
-                      <>
-                        <InfinityIcon
-                          aria-hidden
-                          className="size-4.5 translate-y-[0.5px]"
-                        />
-                        <span className="sr-only">Present</span>
-                      </>
-                    ) : (
-                      <span>{end}</span>
-                    )}
-                  </dd>
-                </dl> */}
               </div>
+
+              {status && (
+                <span className="flex shrink-0 items-center gap-1.5 text-xs">
+                  <span className="relative flex h-2 w-2">
+                    <span
+                      className={`absolute inline-flex h-full w-full ${status.label === "Live" || status.label === "Building" ? "animate-ping" : ""} rounded-full ${status.color} opacity-75`}
+                    />
+                    <span
+                      className={`relative inline-flex h-2 w-2 rounded-full ${status.color}`}
+                    />
+                  </span>
+                  {status.label}
+                </span>
+              )}
 
               <SimpleTooltip content="Open Project Link">
                 <a

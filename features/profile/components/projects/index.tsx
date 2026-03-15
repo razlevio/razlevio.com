@@ -1,7 +1,7 @@
 import { PROJECTS } from "../../data/projects";
 import { Panel, PanelHeader, PanelTitle } from "../panel";
 import { ProjectGrid } from "./project-grid";
-// import { ProjectList } from "./project-list";
+import { ProjectList } from "./project-list";
 
 export function Projects() {
   return (
@@ -14,7 +14,7 @@ export function Projects() {
           </sup>
         </PanelTitle>
       </PanelHeader>
-      {/* <ProjectList /> */}
+      <ProjectList />
       <ProjectGrid />
     </Panel>
   );

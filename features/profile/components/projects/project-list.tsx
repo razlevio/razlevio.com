@@ -5,10 +5,12 @@ import { ProjectItem } from "./project-item";
 
 export function ProjectList() {
   return (
-    <CollapsibleList
-      items={PROJECTS}
-      max={6}
-      renderItem={(item) => <ProjectItem project={item} />}
-    />
+    <div className="block sm:hidden">
+      <CollapsibleList
+        items={PROJECTS}
+        max={6}
+        renderItem={(item) => <ProjectItem project={item} />}
+      />
+    </div>
   );
 }
