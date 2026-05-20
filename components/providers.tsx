@@ -1,10 +1,10 @@
 "use client";
 
-import { ProgressProvider } from "@bprogress/next/app";
+// import { ProgressProvider } from "@bprogress/next/app";
 import { Analytics } from "@vercel/analytics/next";
+import ReactLenis from "lenis/react";
 import dynamic from "next/dynamic";
 import { ThemeProvider } from "next-themes";
-import ReactLenis from "lenis/react";
 
 const Toaster = dynamic(
   () => import("@/components/ui/sonner").then((mod) => mod.Toaster),
@@ -19,15 +19,13 @@ export function Providers({ children }: { children: React.ReactNode }) {
       disableTransitionOnChange
       enableSystem
     >
-      <ProgressProvider
+      {/* <ProgressProvider
         color="hsl(var(--primary))"
         height="4px"
         options={{ showSpinner: false }}
-      >
-        <ReactLenis root>
-          {children}
-        </ReactLenis>
-      </ProgressProvider>
+      > */}
+      <ReactLenis root>{children}</ReactLenis>
+      {/* </ProgressProvider> */}
 
       <Toaster />
       <Analytics />

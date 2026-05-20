@@ -8,7 +8,7 @@ export const USER: User = {
   gender: "male",
   pronouns: "he/him",
   description:
-    "Experienced full-stack engineer and founder. Currently leading as Founder & CTO at [COYA](https://coya.gg) while cooking at Israel National Digital Agency. I turn complex challenges into elegant solutions - whether architecting systems, leading teams, or shipping products from 0 → 1.",
+    "Experienced full-stack engineer and founder. Currently leading as Founder and CTO at COYA while cooking at Israel National Digital Agency. I turn complex challenges into elegant solutions - whether architecting systems, leading teams, or shipping products from 0 → 1.",
   bio: "I get computers ‘puting",
   flipSentences: [
     "I get computers ‘puting",

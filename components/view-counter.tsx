@@ -1,8 +1,6 @@
 import { Eye } from "lucide-react";
 import { incrementPageViews } from "@/features/kv/actions";
 
-export const dynamic = "force-dynamic";
-
 export async function ViewCounter() {
   try {
     const { views } = await incrementPageViews();

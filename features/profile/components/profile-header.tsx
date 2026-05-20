@@ -1,10 +1,21 @@
 import Image from "next/image";
+import { Eye } from "lucide-react";
+import { Suspense } from "react";
 import { FlipSentences } from "@/components/flip-sentences";
 // import { PronounceMyName } from "./pronounce-my-name";
 // import { VerifiedIcon } from "./verified-icon";
 import { ViewCounter } from "@/components/view-counter";
 import { USER } from "@/features/profile/data/user";
 import { cn } from "@/lib/utils";
+
+function ViewCounterFallback() {
+  return (
+    <div className="flex items-center gap-1 text-muted-foreground">
+      <Eye size={14} />
+      <span className="text-xs">–</span>
+    </div>
+  );
+}
 
 export function ProfileHeader() {
   return (
@@ -52,7 +63,9 @@ export function ProfileHeader() {
               </>
             )} */}
             </h1>
-            <ViewCounter />
+            <Suspense fallback={<ViewCounterFallback />}>
+              <ViewCounter />
+            </Suspense>
           </div>
           <div className="h-auto overflow-hidden border-edge border-t px-4 py-1">
             <FlipSentences sentences={USER.flipSentences} />

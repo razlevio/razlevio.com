@@ -29,9 +29,9 @@ export default function Home() {
       <Brand />
       <Image
         alt="Brand"
-        className="opacity-90"
+        className="opacity-80"
         height={1500}
-        src="/brand.webp"
+        src="/brand-cover.webp"
         width={1000}
       />
       <Separator />

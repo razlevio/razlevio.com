@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import type { Activity } from "@/components/contribution-graph";
 import { GITHUB_USERNAME } from "@/config/site";
 
@@ -6,6 +7,9 @@ type GitHubContributionsResponse = {
 };
 
 export async function getGitHubContributions() {
+  "use cache";
+  cacheLife("days");
+
   const res = await fetch(
     `https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=last`
   );
