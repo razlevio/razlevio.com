@@ -49,8 +49,8 @@ export const EXPERIENCES: Experience[] = [
     companyLogo: "/experiences/matrix.png",
     positions: [
       {
-        id: "matrix-dna-fullstack",
-        title: "Full Stack Engineer",
+        id: "matrix-dna-software-engineer",
+        title: "Software Engineer",
         employmentPeriod: {
           start: "09.2024",
         },
@@ -58,7 +58,7 @@ export const EXPERIENCES: Experience[] = [
         icon: "code",
         description: `Serving as lead software expert on high-impact projects, delivering software platforms with national impact.
 
-- Deployed to Israel National Digital Agency (INDA) as lead full stack engineer for the governmental task force for digital transformation in local government.
+- Deployed to Israel National Digital Agency (INDA) as lead software engineer for the governmental task force for digital transformation in local government.
 - Designed and delivered mission-critical systems handling multi-million shekel operations, inter-ministerial collaboration, and nationwide municipal data tracking.
 - Act as strategic technology partner, ensuring solutions meet strict government standards for security, scalability, and compliance.
 - Lead technical architecture decisions for systems that impact hundreds of municipalities across Israel.
@@ -88,8 +88,8 @@ export const EXPERIENCES: Experience[] = [
     companyLogo: "/experiences/inda.png",
     positions: [
       {
-        id: "inda-fullstack",
-        title: "Full Stack Engineer",
+        id: "inda-software-engineer",
+        title: "Software Engineer",
         employmentPeriod: {
           start: "01.2022",
         },

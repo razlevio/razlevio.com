@@ -8,11 +8,11 @@ export const USER: User = {
   gender: "male",
   pronouns: "he/him",
   description:
-    "Experienced full-stack engineer and founder. Currently leading as Founder and CTO at COYA while cooking at Israel National Digital Agency. I turn complex challenges into elegant solutions - whether architecting systems, leading teams, or shipping products from 0 → 1.",
+    "Experienced software engineer and founder. Currently leading as Founder and CTO at COYA while cooking at Israel National Digital Agency. I turn complex challenges into elegant solutions - whether architecting systems, leading teams, or shipping products from 0 → 1.",
   bio: "I get computers ‘puting",
   flipSentences: [
     "I get computers ‘puting",
-    "Full Stack Engineer",
+    "Software Engineer",
     "Interests include 🎾, 🕹️, 📈, 📱, 👨‍💻, 🥊, 🏎️, ⛷️, 🎨, 🍷, ⌚",
     "Analyst and Investor",
     "Entrepreneur",
@@ -21,7 +21,7 @@ export const USER: User = {
   phoneNumber: "", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
   email: "", // base64 encoded
   website: "https://razlevio.com",
-  jobTitle: "Full Stack Engineer",
+  jobTitle: "Software Engineer",
   jobs: [
     {
       title: "Founder and CTO",
@@ -29,19 +29,19 @@ export const USER: User = {
       website: "https://coya.gg",
     },
     {
-      title: "Full Stack Engineer",
+      title: "Software Engineer",
       company: "Israel National Digital Agency",
       website: "https://www.gov.il/",
     },
   ],
   about: `
-Experienced full-stack engineer and founder. Currently leading as Founder & CTO at [COYA](https://coya.gg) while cooking at Israel National Digital Agency. I turn complex challenges into elegant solutions - whether architecting systems, leading teams, or shipping products from 0 → 1.
+Experienced software engineer and founder. Currently leading as Founder & CTO at [COYA](https://coya.gg) while cooking at Israel National Digital Agency. I turn complex challenges into elegant solutions - whether architecting systems, leading teams, or shipping products from 0 → 1.
 
 Interests include 🎾, 🕹️, 📈, 📱, 🥊, 🏎️, ⛷️, 🎨, ☕️, 🍷, ⌚. I'm told I have strong opinions on espresso, stronger positions in tech stocks, a respectable forehand, and an irrational love for anything that goes fast.
 
 Always building.
   `,
-  avatar: "/avatar2.png",
+  avatar: "/avatar.png",
   ogImage: "/rl-og.png",
   namePronunciationUrl: "/audio/razlevio.mp3",
   keywords: ["razlevio", "raz levi", "raz levio"],
